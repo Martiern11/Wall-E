@@ -17,8 +17,8 @@ intents.message_content = True
 load_dotenv() 
  
 # Creating instancec for the discord bot #
+client = discord.Client(intents=intents)
 
-client = discord.Client(messages=True, guilds=True)
 token = str(os.getenv('TOKEN')) #Creating client to send a request to disord API #
 
 # Initializing the Bot #
