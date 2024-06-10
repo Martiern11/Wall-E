@@ -17,6 +17,7 @@ intents.message_content = True
 load_dotenv() 
  
 # Creating instancec for the discord bot #
+
 client = discord.Client(intents=intents)
 
 token = str(os.getenv('TOKEN')) #Creating client to send a request to disord API #
@@ -46,7 +47,7 @@ async def on_message(message):
   
     if channel == "general": 
         if user_message.lower() == "Hello" or user_message.lower() == "hi": 
-            await message.channel.send(f'Hola {username}') 
+            await message.channel.send(f'Hola {username} Your EC2 Data: {ec2_metadata.region}') 
             return
         elif user_message.lower() == "bye": 
             await message.channel.send(f'Adios {username}') 
